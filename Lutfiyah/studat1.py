@@ -11,13 +11,17 @@ with st.sidebar:
 
 if pilih_menu == "Operasi Set":
     st.subheader("Operasi Set")
-    
-    # 1. Inisialisasi set
-    setA = {2, 5, 8, 10, 12}
-    setB = {4, 5, 6, 7, 8}
 
-    st.write("**Set A:**", setA)
-    st.write("**Set B:**", setB)
+    # Input Set A dan Set B
+    setA_input = st.text_input("Masukkan elemen Set A (pisahkan dengan koma)", "2,3,5,7")
+    setB_input = st.text_input("Masukkan elemen Set B (pisahkan dengan koma)", "3,4,5,6")
+
+    # Konversi input menjadi set
+    setA = set(setA_input.split(","))
+    setB = set(setB_input.split(","))
+
+    st.write("Set A:", setA)
+    st.write("Set B:", setB)
 
     st.subheader("Pilih Operasi Set yang Ingin Dilihat")
 
